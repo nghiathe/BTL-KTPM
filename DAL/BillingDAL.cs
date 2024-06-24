@@ -5,7 +5,11 @@ using System.Data;
 
 namespace DAL
 {
-    public class BillingDAL
+    public interface IBillingDAL
+    {
+        void CheckOut(int billid, byte emid);
+    }
+    public class BillingDAL : IBillingDAL
     {
         private static BillingDAL instance;
 

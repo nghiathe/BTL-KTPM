@@ -6,7 +6,11 @@ using System.Text;
 
 namespace DAL
 {
-    public class FoodDAL
+    public interface IFoodDAL
+    {
+        List<Food> GetFoodDetail(byte comid);
+    }
+    public class FoodDAL : IFoodDAL
     {
         private static FoodDAL instance;
 

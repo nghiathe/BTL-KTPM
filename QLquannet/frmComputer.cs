@@ -10,13 +10,22 @@ namespace QLquannet
 {
     public partial class frmComputer : Form
     {
-        #region ---------- Code cua HungTuLenh 
+        private readonly IZoneDAL _zoneDAL;
+        private readonly IUsageSessionDAL _usageSessionDAL;
+        private readonly IFoodDAL _foodDAL;
+        private readonly IBillingDAL _billingDAL;
+        public byte cid;
+        public int bid;
 
-        byte cid;
-        int bid;
-        public frmComputer()
+        public frmComputer() : this(ZoneDAL.Instance, UsageSessionDAL.Instance, FoodDAL.Instance, BillingDAL.Instance) { }
+
+        public frmComputer(IZoneDAL zoneDAL, IUsageSessionDAL usageSessionDAL, IFoodDAL foodDAL, IBillingDAL billingDAL)
         {
             InitializeComponent();
+            _zoneDAL = zoneDAL;
+            _usageSessionDAL = usageSessionDAL;
+            _foodDAL = foodDAL;
+            _billingDAL = billingDAL;
             txtNhanvien.Text = Employee.fullName;
             LoadZone(1);
             ChangeColorZoneBtn(btnZone1, null);
@@ -56,7 +65,7 @@ namespace QLquannet
             LoadFoodDetail(cid);
 
         }
-        private void btnBatmay_Click(object sender, EventArgs e)
+        public void btnBatmay_Click(object sender, EventArgs e)
         {
             if (txtTT.Text == "Online")
             {
@@ -72,12 +81,12 @@ namespace QLquannet
             }
             else
             {
-                UsageSessionDAL.Instance.StartSession(cid);
+                _usageSessionDAL.StartSession(cid);
                 LoadUsageSession(cid);
                 LoadZone(ComputerZone.zoneId);
             }
         }
-        private void btnThanhtoan_Click(object sender, EventArgs e)
+        public void btnThanhtoan_Click(object sender, EventArgs e)
         {
             int billid = UsageSessionDAL.Instance.GetUnCheckOutSession(cid);
             if (txtTT.Text == "Offline" || txtTT.Text == "Error")
@@ -92,8 +101,8 @@ namespace QLquannet
             {
                 if (billid != -1)
                 {
-                    UsageSessionDAL.Instance.EndSesion(billid);
-                    BillingDAL.Instance.CheckOut(billid, Employee.emId);
+                    _usageSessionDAL.EndSession(billid);
+                    _billingDAL.CheckOut(billid, Employee.emId);
                     LoadZone(ComputerZone.zoneId);
                     MessageBox.Show("Thanh toán thành công cho " + gbMay.Text);
                     LoadUsageSession(cid);
@@ -106,11 +115,11 @@ namespace QLquannet
         #endregion
 
         #region Methods
-        void LoadZone(byte zoneid)
+        public void LoadZone(byte zoneid)
         {
             flpCom.Controls.Clear();
             ComputerZone.zoneId = zoneid;
-            List<Zone> listCom = ZoneDAL.Instance.loadCom(zoneid);
+            List<Zone> listCom = _zoneDAL.loadCom(zoneid);
             int online = 0;
             int offline = 0;
             int error = 0;
@@ -164,12 +173,11 @@ namespace QLquannet
                 txtMouse.Text = com.MouseModel;
                 txtKey.Text = com.KeyboardModel;
                 txtMonitor.Text = com.MonitorModel;
-
             }
         }
-        void LoadUsageSession(byte comid)
+        public void LoadUsageSession(byte comid)
         {
-            UsageSession us = UsageSessionDAL.Instance.GetUsageSessionDetails(comid);
+            UsageSession us = _usageSessionDAL.GetUsageSessionDetails(comid);
 
             gbMay.Text = us.ComName;
             if (us.STime.HasValue)
@@ -203,10 +211,10 @@ namespace QLquannet
             }
             bid = us.BillId;
         }
-        void LoadFoodDetail(byte comid)
+        public void LoadFoodDetail(byte comid)
         {
             lvFood.Items.Clear();
-            List<Food> fl = FoodDAL.Instance.GetFoodDetail(comid);
+            List<Food> fl = _foodDAL.GetFoodDetail(comid);
             decimal fcost = 0m;
             foreach (Food f in fl)
             {
@@ -267,7 +275,6 @@ namespace QLquannet
 
         #endregion
 
-        #endregion
 
     }
 }

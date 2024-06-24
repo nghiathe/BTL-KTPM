@@ -5,7 +5,12 @@ using System.Data;
 
 namespace DAL
 {
-    public class ZoneDAL
+    public interface IZoneDAL
+    {
+        List<Zone> loadCom(byte zoneid);
+        DataTable getZones();
+    }
+    public class ZoneDAL : IZoneDAL
     {
         #region ---------- Code cua HungTuLenh 
         private static ZoneDAL instance;
