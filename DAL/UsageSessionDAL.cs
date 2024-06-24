@@ -3,7 +3,14 @@ using System.Data;
 
 namespace DAL
 {
-    public class UsageSessionDAL
+    public interface IUsageSessionDAL
+    {
+        UsageSession GetUsageSessionDetails(byte comid);
+        void StartSession(byte comId);
+        void EndSession(int billId);
+        int GetUnCheckOutSession(byte comid);
+    }
+    public class UsageSessionDAL : IUsageSessionDAL
     {
         private static UsageSessionDAL instance;
 
@@ -45,7 +52,7 @@ namespace DAL
             Database.Instance.ExecuteNonQuery("ProcUsageSessionINIT @ComputerID", new object[] { comId });
 
         }
-        public void EndSesion(int billid)
+        public void EndSession(int billid)
         {
             string query = string.Format("ProcEndSession @billingid ");
             Database.Instance.ExecuteNonQuery(query, new object[] { billid });

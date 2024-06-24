@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -724,56 +724,56 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlZone;
-        private System.Windows.Forms.Button btnZone4;
-        private System.Windows.Forms.Button btnZone3;
-        private System.Windows.Forms.Button btnZone1;
-        private System.Windows.Forms.FlowLayoutPanel flpCom;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtError;
-        private System.Windows.Forms.TextBox txtUsing;
-        private System.Windows.Forms.TextBox txtAvailable;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnZone2;
-        private System.Windows.Forms.Button btnBatmay;
-        private System.Windows.Forms.Button btnThanhtoan;
-        private System.Windows.Forms.TextBox txtTime;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtNhanvien;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker tpStime;
-        private System.Windows.Forms.TextBox txtTT;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox gbMay;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.GroupBox gbDichvu;
-        private System.Windows.Forms.ListView lvFood;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtTamtinh;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtFcost;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.GroupBox gbZone;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtCPU;
-        private System.Windows.Forms.TextBox txtGPU;
-        private System.Windows.Forms.TextBox txtMonitor;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox txtKey;
-        private System.Windows.Forms.TextBox txtMouse;
-        private System.Windows.Forms.TextBox txtSSD;
-        private System.Windows.Forms.TextBox txtHDD;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.Panel pnlZone;
+        public System.Windows.Forms.Button btnZone4;
+        public System.Windows.Forms.Button btnZone3;
+        public System.Windows.Forms.Button btnZone1;
+        public System.Windows.Forms.FlowLayoutPanel flpCom;
+        public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.TextBox txtError;
+        public System.Windows.Forms.TextBox txtUsing;
+        public System.Windows.Forms.TextBox txtAvailable;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btnZone2;
+        public System.Windows.Forms.Button btnBatmay;
+        public System.Windows.Forms.Button btnThanhtoan;
+        public System.Windows.Forms.TextBox txtTime;
+        public System.Windows.Forms.Label label15;
+        public System.Windows.Forms.Label label14;
+        public System.Windows.Forms.TextBox txtNhanvien;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.DateTimePicker tpStime;
+        public System.Windows.Forms.TextBox txtTT;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.GroupBox gbMay;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox txtPrice;
+        public System.Windows.Forms.GroupBox gbDichvu;
+        public System.Windows.Forms.ListView lvFood;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox txtTamtinh;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox txtFcost;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox txtTotal;
+        public System.Windows.Forms.GroupBox gbZone;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.TextBox txtCPU;
+        public System.Windows.Forms.TextBox txtGPU;
+        public System.Windows.Forms.TextBox txtMonitor;
+        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox txtKey;
+        public System.Windows.Forms.TextBox txtMouse;
+        public System.Windows.Forms.TextBox txtSSD;
+        public System.Windows.Forms.TextBox txtHDD;
+        public System.Windows.Forms.ColumnHeader columnHeader1;
+        public System.Windows.Forms.ColumnHeader columnHeader2;
+        public System.Windows.Forms.ColumnHeader columnHeader3;
+        public System.Windows.Forms.ColumnHeader columnHeader4;
+        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox4;
     }
 }

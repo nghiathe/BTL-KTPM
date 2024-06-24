@@ -5,6 +5,7 @@ namespace DTO
     #region ---------- Code cua HungTuLenh 
     public class Zone
     {
+        public Zone() { }
         public Zone(DataRow row)
         {
             this.ComId = (byte)row["computerid"];

@@ -5,6 +5,7 @@ namespace DTO
 {
     public class UsageSession
     {
+        public UsageSession() { }
         public UsageSession(DataRow row)
         {
             this.ComName = row["computername"].ToString();
